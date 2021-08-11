@@ -1,25 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+// import './App.css';
+import Sidebar from './components/Sidebar';
+import {Box} from '@chakra-ui/react';
+import Header from './components/Header';
+import {useActions, useAppState} from './overminder';
+import {BrowserRouter, Route} from 'react-router-dom';
+import {routes} from './routes';
 function App() {
+  const {mainUi} = useAppState();
+  const {onSidebarShow, onSidebarHide} = useActions();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Sidebar
+        isSidebarOpen={mainUi.isSidebarOpen}
+        onSidebarHide={onSidebarHide}
+      />
+      <Box>
+        <Header
+          onShowSidebar={onSidebarShow}
+          isSidebarOpen={mainUi.isSidebarOpen}
+        />
+      </Box>
+      {
+        routes.map( (r,i)=>
+          <Route
+            key={'route_'+i}
+            path={r.path}
+            exact={r.exact}
+            component={r.comp}
+        />)
+      }
+    </BrowserRouter>
   );
 }
 
