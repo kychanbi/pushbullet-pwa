@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {MouseEventHandler} from 'react';
 import {
   Button,
   Drawer,
@@ -9,16 +9,28 @@ import {
   DrawerOverlay,
   VStack,
 } from '@chakra-ui/react';
-import {Link, NavLink} from 'react-router-dom';
 import {ROUTES} from '../routes';
+import {NavLink} from './NavLink';
 
 interface SidebarProps {
   isSidebarOpen: boolean;
   onSidebarHide: () => void;
 }
-const SettingButton = ()=>(<Button w="100%">
-  Setting
-</Button>)
+
+interface ButtonProps {
+  onClick: MouseEventHandler;
+}
+
+const SettingButton = ({onClick}: ButtonProps) => (
+  <Button onClick={onClick} w="100%">
+    Setting
+  </Button>
+);
+const HomeButton = ({onClick}: ButtonProps) => (
+  <Button onClick={onClick} w="100%">
+    Home
+  </Button>
+);
 const Sidebar = ({isSidebarOpen, onSidebarHide}: SidebarProps) => {
   return (
     <>
@@ -30,9 +42,12 @@ const Sidebar = ({isSidebarOpen, onSidebarHide}: SidebarProps) => {
             <DrawerBody>
               <VStack>
                 {/* MenuItems are not rendered unless Menu is open */}
-                <Button w="100%">New Window</Button>
-                <Button w="100%">Open Closed Tab</Button>
-                <NavLink to={ROUTES.SETTING} component={SettingButton} />
+                {/*<NavLink to={ROUTES.MAIN}>*/}
+                {/*  <HomeButton/>*/}
+                {/*</NavLink>*/}
+                <NavLink to={ROUTES.MAIN} Component={HomeButton} />
+
+                <NavLink to={ROUTES.SETTING} Component={SettingButton} />
               </VStack>
             </DrawerBody>
           </DrawerContent>

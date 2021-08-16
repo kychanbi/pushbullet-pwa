@@ -1,11 +1,19 @@
-import {Overmind} from 'overmind';
 import {Context} from '../../overminder';
 import {StateType} from '../state';
 
-const getAllPushes = (context: Context) => {};
+export const fetchAndSetAllPushes = async (context: Context) => {
+  const {accessToken} = context.state;
+  console.log('fetchAndSetAllPushes',accessToken);
+  if(accessToken) {
+    const res = await context.effects.getPushes(accessToken);
+    console.log(res);
+    context.state.pushes = res.pushes
+  }
+};
 
 export const setAccessToken = (context: Context, value: string) => {
   context.state.accessToken = value;
+  localStorage.setItem('accessToken', value);
 };
 
 interface SetMainUiParam {
@@ -24,3 +32,7 @@ export const onSidebarShow = (context: Context) => {
 export const onSidebarHide = (context: Context) => {
   setMainUi(context, {key: 'isSidebarOpen', value: false});
 };
+
+export const initApp = (context: Context) => {
+  context.state.accessToken = localStorage.accessToken;
+}
