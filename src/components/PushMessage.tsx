@@ -14,8 +14,8 @@ export type PushMessageProps = LinkMessageProps | NoteMessageProps;
 export const PushMessage = (props: PushMessageProps) => {
   switch (props.type) {
     case MessageTypes.link:
-      return <LinkMessage type={props.type} url={props.url} title={props.title} />
+      return <LinkMessage {...props} />
     case MessageTypes.note:
-      return  <NoteMessage type={props.type} body={props.body} />
+      return  <NoteMessage {...props} />
   }
 };

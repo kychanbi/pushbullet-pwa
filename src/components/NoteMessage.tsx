@@ -1,12 +1,25 @@
-import React from 'react'
+import React from 'react';
 import {MessageTypes} from './PushMessage';
-import {Text} from '@chakra-ui/react';
+import {Box, Text} from '@chakra-ui/react';
+import {timestampToDateString} from '../utils';
 
 export interface NoteMessageProps {
-  type: MessageTypes.note,
-  body: string,
+  type: MessageTypes.note;
+  body: string;
+  modified: number;
 }
 
-export const NoteMessage = ({body}:NoteMessageProps)=>{
-  return <Text>{body}</Text>
-}
+export const NoteMessage = ({body, modified}: NoteMessageProps) => {
+  const date = timestampToDateString(modified);
+  return (
+    <Box
+      borderWidth={1}
+      w={'100%'}
+      borderRadius={'lg'}
+      p={'1em'}
+      borderColor={'blue.100'}>
+      <Text>{body}</Text>
+      <Text fontSize={'xs'} float={'right'}>{date}</Text>
+    </Box>
+  );
+};
