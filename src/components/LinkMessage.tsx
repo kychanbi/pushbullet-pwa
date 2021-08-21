@@ -13,7 +13,7 @@ export interface LinkMessageProps {
 export const LinkMessage = ({url, title, modified}: LinkMessageProps) => {
   const date = timestampToDateString(modified);
   return (
-    <Box borderWidth={1} w={'100%'} borderRadius={'lg'} p={'1em'} borderColor={'blue.200'}>
+    <Box borderWidth={1} w={'100%'} borderRadius={'lg'} p={'0.5em 1em'} borderColor={'blue.200'}>
       <Link href={url} isExternal color={'blue.400'}>{url}</Link>
       <Text>{title}</Text>
       <Text fontSize={'xs'} float={'right'}>{date}</Text>

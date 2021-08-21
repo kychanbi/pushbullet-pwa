@@ -11,6 +11,8 @@ import {
 } from '@chakra-ui/react';
 import {ROUTES} from '../routes';
 import {NavLink} from './NavLink';
+import {ChevronLeftIcon} from '@chakra-ui/icons';
+import "../scss/sidebar.scss";
 
 interface SidebarProps {
   isSidebarOpen: boolean;
@@ -22,33 +24,37 @@ interface ButtonProps {
 }
 
 const SettingButton = ({onClick}: ButtonProps) => (
-  <Button onClick={onClick} w="100%">
+  <Button colorScheme={'whatsapp'} onClick={onClick} w="100%">
     Setting
   </Button>
 );
 const HomeButton = ({onClick}: ButtonProps) => (
-  <Button onClick={onClick} w="100%">
+  <Button colorScheme={'whatsapp'} onClick={onClick} w="100%">
     Home
   </Button>
 );
+
+
+const ClosingButton = ({onClick, }:ButtonProps) =>(
+  <div onClick={onClick} className={'sidebarCloseBtn'}>
+    <ChevronLeftIcon fontSize={'3em'}/>
+  </div>
+)
+
 const Sidebar = ({isSidebarOpen, onSidebarHide}: SidebarProps) => {
   return (
     <>
       <Drawer isOpen={isSidebarOpen} placement="left" onClose={onSidebarHide}>
         <DrawerOverlay>
           <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerHeader>Chakra-UI</DrawerHeader>
+            {/*<DrawerCloseButton />*/}
+            {/*<DrawerHeader></DrawerHeader>*/}
             <DrawerBody>
-              <VStack>
-                {/* MenuItems are not rendered unless Menu is open */}
-                {/*<NavLink to={ROUTES.MAIN}>*/}
-                {/*  <HomeButton/>*/}
-                {/*</NavLink>*/}
+              <VStack zIndex={1} position={'relative'}>
                 <NavLink to={ROUTES.MAIN} Component={HomeButton} />
-
                 <NavLink to={ROUTES.SETTING} Component={SettingButton} />
               </VStack>
+              <ClosingButton onClick={onSidebarHide}/>
             </DrawerBody>
           </DrawerContent>
         </DrawerOverlay>

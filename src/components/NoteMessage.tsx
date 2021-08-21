@@ -16,7 +16,7 @@ export const NoteMessage = ({body, modified}: NoteMessageProps) => {
       borderWidth={1}
       w={'100%'}
       borderRadius={'lg'}
-      p={'1em'}
+      p={'0.5em 1em'}
       borderColor={'blue.100'}>
       <Text>{body}</Text>
       <Text fontSize={'xs'} float={'right'}>{date}</Text>

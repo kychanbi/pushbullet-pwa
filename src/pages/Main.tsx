@@ -7,9 +7,9 @@ interface MessageContainerProps {
   messages: Array<PushMessageProps>;
 }
 
-const MessageContainer = ({messages}: MessageContainerProps) => {
+const MessageContainer = ({messages}: MessageContainerProps) =>  {
   return (
-    <VStack maxW={'100%'}>
+    <VStack maxW={'100%'} p={'0.5em'}>
       {messages.map((m, i) => (
         <PushMessage key={'push' + i} {...m} />
       ))}
@@ -25,7 +25,6 @@ export const Main = () => {
   }, [accessToken]);
   return (
     <Container maxW={'100vw'}>
-      <Text>main</Text>
       <MessageContainer messages={pushes} />
     </Container>
   );

@@ -7,7 +7,7 @@ export const fetchAndSetAllPushes = async (context: Context) => {
   if(accessToken) {
     const res = await context.effects.getPushes(accessToken);
     console.log(res);
-    context.state.pushes = res.pushes
+    context.state.pushes = res?.pushes?? []
   }
 };
 

@@ -10,7 +10,6 @@ export const NavLink = ({to, Component}: LinkProps) => {
   const handleClick: MouseEventHandler = (
     e: React.MouseEvent<HTMLInputElement>,
   ) => {
-    console.log('click',e)
     e.preventDefault();
     history.push(to);
   };

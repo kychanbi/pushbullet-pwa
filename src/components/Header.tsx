@@ -1,5 +1,5 @@
 import React, {MouseEventHandler} from 'react';
-import {Flex, Box, useTheme, IconButton, Center, Text} from '@chakra-ui/react';
+import {Flex, Box, useTheme, IconButton, Center, Text, Heading} from '@chakra-ui/react';
 import {ChevronRightIcon} from '@chakra-ui/icons';
 
 interface HeaderProps {
@@ -14,15 +14,15 @@ const Header = ({isSidebarOpen,onShowSidebar}:HeaderProps) => {
         { isSidebarOpen ||
           <IconButton
             icon={<ChevronRightIcon w={8} h={8} />}
-            colorScheme="blue"
+            colorScheme="whatsapp"
             variant="outline"
             onClick={onShowSidebar}
             aria-label={''}
           />
         }
       </Box>
-      <Center flex={1} h="40px">
-        <Text fontSize="xl">Pushbullet PWA (unofficial)</Text>
+      <Center flex={2.5} h="3em">
+        <Heading color={'green'} fontSize="lg">Pushbullet PWA (unofficial)</Heading>
       </Center>
       <Box flex={1}/>
     </Flex>
