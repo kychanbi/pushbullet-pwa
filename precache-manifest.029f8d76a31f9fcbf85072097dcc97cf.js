@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "532085c7954ce7fa952970dac83c90a8",
+    "revision": "03792ebf5d551f90314e1156ff08e1e7",
     "url": "/pushbullet-pwa/index.html"
   },
   {
-    "revision": "7538e5fe3e8003336139",
+    "revision": "c14018c14574669388f7",
     "url": "/pushbullet-pwa/static/css/main.4ee048c8.chunk.css"
   },
   {
-    "revision": "a9ef3d3ec65bab1b083f",
-    "url": "/pushbullet-pwa/static/js/2.d256139f.chunk.js"
+    "revision": "bf1ce037686a778415ee",
+    "url": "/pushbullet-pwa/static/js/2.e67fdec8.chunk.js"
   },
   {
     "revision": "aa4100970f46d7e0ec2af84de3f2740b",
-    "url": "/pushbullet-pwa/static/js/2.d256139f.chunk.js.LICENSE.txt"
+    "url": "/pushbullet-pwa/static/js/2.e67fdec8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7538e5fe3e8003336139",
-    "url": "/pushbullet-pwa/static/js/main.edbb3e8a.chunk.js"
+    "revision": "c14018c14574669388f7",
+    "url": "/pushbullet-pwa/static/js/main.d4b96ed8.chunk.js"
   },
   {
     "revision": "9c53c3d30ac08ac8b299",
