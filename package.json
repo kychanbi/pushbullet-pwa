@@ -2,7 +2,7 @@
   "name": "pushbullet-pwa",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kychanbi.github.io/pushbullet-pwa",
+  "homepage": "https://avalon-voice-pwa.vercel.app/",
   "dependencies": {
     "@chakra-ui/icons": "^1.0.14",
     "@chakra-ui/react": "^1.6.5",
