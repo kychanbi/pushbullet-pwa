@@ -17,5 +17,7 @@ export const PushMessage = (props: PushMessageProps) => {
       return <LinkMessage {...props} />
     case MessageTypes.note:
       return  <NoteMessage {...props} />
+    default:
+      return <></>;
   }
 };
