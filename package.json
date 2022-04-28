@@ -2,7 +2,7 @@
   "name": "pushbullet-pwa",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kychanbi.github.io/pushbullet-pwa",
+  "homepage": "https://pushbullet-pwa.vercel.app/",
   "dependencies": {
     "@chakra-ui/icons": "^1.0.14",
     "@chakra-ui/react": "^1.6.5",
@@ -30,6 +30,7 @@
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build-localhost": "PUBLIC_URL=/ react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
